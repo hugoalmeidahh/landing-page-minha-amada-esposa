@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "build:tailwind": "tailwindcss build src/index.css -o src/tailwind.output.css",
+    "build:tailwind": "tailwindcss build styles/index.css -o public/tailwind.output.css",
     "prestart": "npm run build:tailwind",
     "prebuild": "npm run build:tailwind"
   },
