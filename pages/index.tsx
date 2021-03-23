@@ -156,7 +156,7 @@ export default function Home() {
                 <br />
                 
 
-                <p>INSCRIÇÕES <a href=""> ME CHAMA!</a> </p>
+                <p>PARA INSCRIÇÕES, CLIQUE <a href="https://api.whatsapp.com/send?phone=5512981565612&text=Quero%20fazer%20minha%20INSCRIÇÃO%20no%20ReprogrAME-SE%20Quântico!!"> AQUI, E ME CHAMA NO WHATSAPP!</a> </p>
               </p>
             </div>
           </div>
@@ -166,80 +166,29 @@ export default function Home() {
     <section className="bg-white border-b py-8">
       <div className="container mx-auto flex flex-wrap pt-4 pb-12">
         <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-          Title
+          Youtube
         </h1>
         <div className="w-full mb-4">
           <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
         </div>
-        <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+
+
+        <div className="w-full md:w-4/4 p-6 flex flex-col flex-grow flex-shrink">
           <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-            <a href="#" className="flex flex-wrap no-underline hover:no-underline">
-              <p className="w-full text-gray-600 text-xs md:text-sm px-6">
-                xGETTING STARTED
-              </p>
               <div className="w-full font-bold text-xl text-gray-800 px-6">
-                Lorem ipsum dolor sit amet.
+                  <iframe className="w-full p-6" height='450'  src="https://www.youtube.com/embed/utm06w_zkns"
+                    title="UNIVERSO DEVOLVE | MICHELE JIMENEZ"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                  </iframe>
               </div>
-              <p className="text-gray-800 text-base px-6 mb-5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+              <p className="w-full text-center text-gray-800 text-base center px-6 mb-5">
+                Gostou do vídeo? Assine nosso canal, curta e compartilhe!
               </p>
-            </a>
-          </div>
-          <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-            <div className="flex items-center justify-start">
-              <button className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                Action
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-          <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-            <a href="#" className="flex flex-wrap no-underline hover:no-underline">
-              <p className="w-full text-gray-600 text-xs md:text-sm px-6">
-                xGETTING STARTED
-              </p>
-              <div className="w-full font-bold text-xl text-gray-800 px-6">
-                Lorem ipsum dolor sit amet.
-              </div>
-              <p className="text-gray-800 text-base px-6 mb-5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-              </p>
-            </a>
-          </div>
-          <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-            <div className="flex items-center justify-center">
-              <button className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                Action
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-          <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-            <a href="#" className="flex flex-wrap no-underline hover:no-underline">
-              <p className="w-full text-gray-600 text-xs md:text-sm px-6">
-                xGETTING STARTED
-              </p>
-              <div className="w-full font-bold text-xl text-gray-800 px-6">
-                Lorem ipsum dolor sit amet.
-              </div>
-              <p className="text-gray-800 text-base px-6 mb-5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-              </p>
-            </a>
-          </div>
-          <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-            <div className="flex items-center justify-end">
-              <button className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                Action
-              </button>
-            </div>
           </div>
         </div>
       </div>
     </section>
-    <section className="bg-gray-100 py-8">
+    {/* <section className="bg-gray-100 py-8">
       <div className="container mx-auto px-2 pt-4 pb-12 text-gray-800">
         <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
           Pricing
@@ -319,7 +268,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
     {/* <!-- Change the colour #f8fafc to match the previous section colour --> */}
     <svg className="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -343,8 +292,8 @@ export default function Home() {
       </g>
     </svg>
     <section className="container mx-auto text-center py-6 mb-12">
-      <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-white">
-        Call to Action
+      {/* <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-black">
+       Inscrever
       </h1>
       <div className="w-full mb-4">
         <div className="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
@@ -354,7 +303,7 @@ export default function Home() {
       </h3>
       <button className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
         Action!
-      </button>
+      </button> */}
     </section>
     {/* <!--Footer--> */}
     <footer className="bg-white">
@@ -362,18 +311,10 @@ export default function Home() {
         <div className="w-full flex flex-col md:flex-row py-6">
           <div className="flex-1 mb-6 text-black">
             <a className="text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
-              {/* <!--Icon from: http://www.potlabicons.com/ --> */}
-              <svg className="h-8 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.005 512.005">
-                <rect fill="#2a2a31" x="16.539" y="425.626" width="479.767" height="50.502" transform="matrix(1,0,0,1,0,0)" />
-                <path
-                  className="plane-take-off"
-                  d=" M 510.7 189.151 C 505.271 168.95 484.565 156.956 464.365 162.385 L 330.156 198.367 L 155.924 35.878 L 107.19 49.008 L 211.729 230.183 L 86.232 263.767 L 36.614 224.754 L 0 234.603 L 45.957 314.27 L 65.274 347.727 L 105.802 336.869 L 240.011 300.886 L 349.726 271.469 L 483.935 235.486 C 504.134 230.057 516.129 209.352 510.7 189.151 Z "
-                />
-              </svg>
-              LANDING
+              <img className="w-full md:w-1/4 z-50" src="assets/images/logo/mjo-logo.png" />
             </a>
           </div>
-          <div className="flex-1">
+          {/* <div className="flex-1">
             <p className="uppercase text-gray-500 md:mb-6">Links</p>
             <ul className="list-reset mb-6">
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
@@ -425,7 +366,7 @@ export default function Home() {
                 <a href="#" className="no-underline hover:underline text-gray-800 hover:text-pink-500">Contact</a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
       <a href="https://www.freepik.com/free-photos-vectors/background" className="text-gray-500">Background vector created by freepik - www.freepik.com</a>
