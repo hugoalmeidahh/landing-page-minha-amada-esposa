@@ -1,6 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is project NextJs and template stack NextJs+TypeScript+TailwindCSS
+
+LINK DEMO [Landing-Page](landing-page-minha-amada-esposa.vercel.app)
 
 ## Getting Started
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 
