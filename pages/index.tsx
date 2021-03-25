@@ -1,10 +1,65 @@
 import { useEffect } from 'react'
 import Head from 'next/head'
 
+function EmbeddedVideo() {
+  return (
+    <div
+      className="video"
+      style={{
+        position: "relative",
+        paddingBottom: "56.25%" /* 16:9 */,
+        paddingTop: 25,
+        height: 0
+      }}
+    >
+      <iframe
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%"
+        }}
+        src={`https://www.youtube.com/embed/utm06w_zkns`}
+        frameBorder="0"
+      />
+    </div>
+  )
+}
+
 export default function Home() {
   useEffect(() => {
+    var scrollpos = window.scrollY;
+    var header = document.getElementById("header");
+    var navcontent = document.getElementById("nav-content");
+    var navaction = document.getElementById("navAction");
+    var toToggle = document.querySelectorAll(".toggleColour");
     document.addEventListener('scroll', () => {
       console.log('pos', window.scrollY)
+      scrollpos = window.scrollY;
+
+      if (scrollpos > 10) {
+        header.classList.add("bg-dark-green");
+        //Use to switch toggleColour colours
+        for (var i = 0; i < toToggle.length; i++) {
+          toToggle[i].classList.add("text-gray-800");
+          toToggle[i].classList.remove("text-white");
+        }
+        header.classList.add("shadow");
+        navcontent.classList.remove("bg-gray-100");
+        navcontent.classList.add("bg-white");
+      } else {
+        header.classList.remove("bg-dark-green");
+        //Use to switch toggleColour colours
+        for (var i = 0; i < toToggle.length; i++) {
+          toToggle[i].classList.add("text-white");
+          toToggle[i].classList.remove("text-gray-800");
+        }
+
+        header.classList.remove("shadow");
+        navcontent.classList.remove("bg-white");
+        navcontent.classList.add("bg-gray-100");
+      }
     })
   }, [])
 
@@ -21,47 +76,25 @@ export default function Home() {
       <nav id="header" className="fixed w-full z-30 top-0 text-white">
         <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
           <div className="pl-4 flex items-center">
-            {/* <a className="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#"> */}
-              {/* <!--Icon from: http://www.potlabicons.com/ --> */}
-              {/* <svg className="h-8 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.005 512.005">
-                <rect fill="#2a2a31" x="16.539" y="425.626" width="479.767" height="50.502" transform="matrix(1,0,0,1,0,0)" />
-                <path
-                  className="plane-take-off"
-                  d=" M 510.7 189.151 C 505.271 168.95 484.565 156.956 464.365 162.385 L 330.156 198.367 L 155.924 35.878 L 107.19 49.008 L 211.729 230.183 L 86.232 263.767 L 36.614 224.754 L 0 234.603 L 45.957 314.27 L 65.274 347.727 L 105.802 336.869 L 240.011 300.886 L 349.726 271.469 L 483.935 235.486 C 504.134 230.057 516.129 209.352 510.7 189.151 Z "
-                />
-              </svg> */}
-              {/* MICHELE JIMENEZ */}
-            {/* </a> */}
           </div>
           <div className="block lg:hidden pr-4">
-            <button id="nav-toggle" className="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-              <svg className="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <title>Menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-              </svg>
-            </button>
+           
           </div>
           <div className="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
             <ul className="list-reset lg:flex justify-end flex-1 items-center">
               <li className="mr-3">
-                <a className="inline-block py-2 px-4 text-black font-bold no-underline" href="#">HOME</a>
+                <a className="inline-block py-2 px-4 text-gradient font-bold no-underline" href="#">HOME</a>
               </li>
               <li className="mr-3">
-                <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="https://instagram.com/michelejimenezoficial">INSTAGRAM</a>
+                <a className="inline-block text-gradient no-underline hover:text-gray-800 hover:text-underline py-2 px-4" target="_blank" href="https://instagram.com/michelejimenezoficial">INSTAGRAM</a>
               </li>
               <li className="mr-3">
-                <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="https://facebook.com/michelejimenezoficial">FACEBOOK</a>
+                <a className="inline-block text-gradient no-underline hover:text-gray-800 hover:text-underline py-2 px-4" target="_blank" href="https://facebook.com/michelejimenezoficial">FACEBOOK</a>
               </li>
               <li className="mr-3">
-                <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="https://www.youtube.com/channel/UCMuNhfyl22V5wVkG62RdX_A?sub_confirmation=1">YOUTUBE</a>
+                <a className="inline-block text-gradient no-underline hover:text-gray-800 hover:text-underline py-2 px-4" target="_blank" href="https://www.youtube.com/channel/UCMuNhfyl22V5wVkG62RdX_A?sub_confirmation=1">YOUTUBE</a>
               </li>
             </ul>
-            <button
-              id="navAction"
-              className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-            >
-              Trilogia Do Novo Eu
-            </button>
           </div>
         </div>
         <hr className="border-b border-gray-100 opacity-25 my-0 py-0" />
@@ -152,12 +185,13 @@ export default function Home() {
                   Esse Treinamento foi criado para que você desconstrua seu VELHO EU, desinstalando da sua mente o que te aprisiona na
                   escassez e nas energias de baixa vibração. Eu vou te ensinar a eliminar todas as crenças e paradigmas que vivem no seu
                   inconsciente te sabotando, dificultando sua evolução e impedindo a expansão da sua consciência para uma nova realidade,
-                  uma vida cheia de realizações.                <br />
+                  uma vida cheia de realizações.
                 <br />
+                <br />
+              </p>
                 
 
-                <p>PARA INSCRIÇÕES, CLIQUE <a href="https://api.whatsapp.com/send?phone=5512981565612&text=Quero%20fazer%20minha%20INSCRIÇÃO%20no%20ReprogrAME-SE%20Quântico!!"> AQUI, E ME CHAMA NO WHATSAPP!</a> </p>
-              </p>
+              <p>PARA INSCRIÇÕES, CLIQUE <a href="https://api.whatsapp.com/send?phone=5512981565612&text=Quero%20fazer%20minha%20INSCRIÇÃO%20no%20ReprogrAME-SE%20Quântico!!"> AQUI, E ME CHAMA NO WHATSAPP!</a> </p>
             </div>
           </div>
         </div>
@@ -176,10 +210,7 @@ export default function Home() {
         <div className="w-full md:w-4/4 p-6 flex flex-col flex-grow flex-shrink">
           <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
               <div className="w-full font-bold text-xl text-gray-800 px-6">
-                  <iframe className="w-full p-6" height='450'  src="https://www.youtube.com/embed/utm06w_zkns"
-                    title="UNIVERSO DEVOLVE | MICHELE JIMENEZ"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                  </iframe>
+               <EmbeddedVideo />
               </div>
               <p className="w-full text-center text-gray-800 text-base center px-6 mb-5">
                 Gostou do vídeo? Assine nosso canal, curta e compartilhe!
@@ -188,87 +219,7 @@ export default function Home() {
         </div>
       </div>
     </section>
-    {/* <section className="bg-gray-100 py-8">
-      <div className="container mx-auto px-2 pt-4 pb-12 text-gray-800">
-        <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-          Pricing
-        </h1>
-        <div className="w-full mb-4">
-          <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
-        </div>
-        <div className="flex flex-col sm:flex-row justify-center pt-12 my-12 sm:my-4">
-          <div className="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
-            <div className="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
-              <div className="p-8 text-3xl font-bold text-center border-b-4">
-                Free
-              </div>
-              <ul className="w-full text-center text-sm">
-                <li className="border-b py-4">Thing</li>
-                <li className="border-b py-4">Thing</li>
-                <li className="border-b py-4">Thing</li>
-              </ul>
-            </div>
-            <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-              <div className="w-full pt-6 text-3xl text-gray-600 font-bold text-center">
-                £0
-                <span className="text-base">for one user</span>
-              </div>
-              <div className="flex items-center justify-center">
-                <button className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                  Sign Up
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col w-5/6 lg:w-1/3 mx-auto lg:mx-0 rounded-lg bg-white mt-4 sm:-mt-6 shadow-lg z-10">
-            <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-              <div className="w-full p-8 text-3xl font-bold text-center">Basic</div>
-              <div className="h-1 w-full gradient my-0 py-0 rounded-t"></div>
-              <ul className="w-full text-center text-base font-bold">
-                <li className="border-b py-4">Thing</li>
-                <li className="border-b py-4">Thing</li>
-                <li className="border-b py-4">Thing</li>
-                <li className="border-b py-4">Thing</li>
-              </ul>
-            </div>
-            <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-              <div className="w-full pt-6 text-4xl font-bold text-center">
-                £x.99
-                <span className="text-base">/ per user</span>
-              </div>
-              <div className="flex items-center justify-center">
-                <button className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                  Sign Up
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
-            <div className="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
-              <div className="p-8 text-3xl font-bold text-center border-b-4">
-                Pro
-              </div>
-              <ul className="w-full text-center text-sm">
-                <li className="border-b py-4">Thing</li>
-                <li className="border-b py-4">Thing</li>
-                <li className="border-b py-4">Thing</li>
-              </ul>
-            </div>
-            <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-              <div className="w-full pt-6 text-3xl text-gray-600 font-bold text-center">
-                £x.99
-                <span className="text-base">/ per user</span>
-              </div>
-              <div className="flex items-center justify-center">
-                <button className="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                  Sign Up
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> */}
+    
     {/* <!-- Change the colour #f8fafc to match the previous section colour --> */}
     <svg className="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -291,20 +242,7 @@ export default function Home() {
         </g>
       </g>
     </svg>
-    <section className="container mx-auto text-center py-6 mb-12">
-      {/* <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-black">
-       Inscrever
-      </h1>
-      <div className="w-full mb-4">
-        <div className="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
-      </div>
-      <h3 className="my-4 text-3xl leading-tight">
-        Main Hero Message to sell yourself!
-      </h3>
-      <button className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-        Action!
-      </button> */}
-    </section>
+
     {/* <!--Footer--> */}
     <footer className="bg-white">
       <div className="container mx-auto px-8">
@@ -314,62 +252,8 @@ export default function Home() {
               <img className="w-full md:w-1/4 z-50" src="assets/images/logo/mjo-logo.png" />
             </a>
           </div>
-          {/* <div className="flex-1">
-            <p className="uppercase text-gray-500 md:mb-6">Links</p>
-            <ul className="list-reset mb-6">
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" className="no-underline hover:underline text-gray-800 hover:text-pink-500">FAQ</a>
-              </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" className="no-underline hover:underline text-gray-800 hover:text-pink-500">Help</a>
-              </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" className="no-underline hover:underline text-gray-800 hover:text-pink-500">Support</a>
-              </li>
-            </ul>
-          </div>
-          <div className="flex-1">
-            <p className="uppercase text-gray-500 md:mb-6">Legal</p>
-            <ul className="list-reset mb-6">
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" className="no-underline hover:underline text-gray-800 hover:text-pink-500">Terms</a>
-              </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" className="no-underline hover:underline text-gray-800 hover:text-pink-500">Privacy</a>
-              </li>
-            </ul>
-          </div>
-          <div className="flex-1">
-            <p className="uppercase text-gray-500 md:mb-6">Social</p>
-            <ul className="list-reset mb-6">
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" className="no-underline hover:underline text-gray-800 hover:text-pink-500">Facebook</a>
-              </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" className="no-underline hover:underline text-gray-800 hover:text-pink-500">Linkedin</a>
-              </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" className="no-underline hover:underline text-gray-800 hover:text-pink-500">Twitter</a>
-              </li>
-            </ul>
-          </div>
-          <div className="flex-1">
-            <p className="uppercase text-gray-500 md:mb-6">Company</p>
-            <ul className="list-reset mb-6">
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" className="no-underline hover:underline text-gray-800 hover:text-pink-500">Official Blog</a>
-              </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" className="no-underline hover:underline text-gray-800 hover:text-pink-500">About Us</a>
-              </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" className="no-underline hover:underline text-gray-800 hover:text-pink-500">Contact</a>
-              </li>
-            </ul>
-          </div> */}
         </div>
       </div>
-      <a href="https://www.freepik.com/free-photos-vectors/background" className="text-gray-500">Background vector created by freepik - www.freepik.com</a>
     </footer>
     </>
   )

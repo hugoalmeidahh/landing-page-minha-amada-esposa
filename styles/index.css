@@ -1,11 +1,32 @@
 @tailwind base;
 
+.bg-dark-green {
+  background: #1d2c36;
+}
+
 .gradient {
   background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
 }
 
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    #ffff8e 0,
+    #ffeb82 16.67%,
+    #efd077 33.33%,
+    #d8b46c 50%,
+    #bf9961 66.67%,
+    #a88258 83.33%,
+    #936f51 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .bg-background {
-  background: url("../public/assets/images/bg/bg04.png") no-repeat;
+  background: url("../public/assets/images/bg/bg04.png");
+  background-size: contain;
+  background-position: center;
 }
 
 @tailwind components;
